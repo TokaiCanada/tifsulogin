@@ -23543,34 +23543,34 @@ body.coming-soon-page .header {
 }
 
 /* Style the custom dropdown container */
-/* Style the custom dropdown container */
 .custom-dropdown {
   position: relative;
   display: inline-block;
-  z-index: 2; /* Set a higher z-index to ensure it appears above other elements */
+  z-index: 3; /* Set a higher z-index to ensure it appears above other elements */
   text-align: center; /* Center the content horizontally */
 }
 
 /* Style the selected option */
 .selected-option {
   display: inline-block;
-  padding: 15px 25px; /* Adjust the padding as needed */
+  padding: 15px 15px; /* Adjust the padding as needed */
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 1px;
   cursor: pointer;
   font-size: 14px; /* Adjust the font size as needed */
   white-space: nowrap; /* Prevent text wrapping */
-  height: 48px; /* Set a fixed height to maintain consistency */
-  line-height: 18px; /* Adjust line-height for vertical centering */
-  width: 170px;
+  height: 35px; /* Set a fixed height to maintain consistency */
+  line-height: 5px; /* Adjust line-height for vertical centering */
+  width: 140px;
 }
 
 
 /* Style the dropdown list */
 .dropdown-list {
   list-style: none;
-  padding: 25px;
+  font-size: 13px; /* Adjust the font size as needed */
+  padding: 15px;
   margin: 0;
   position: absolute;
   top: 100%;

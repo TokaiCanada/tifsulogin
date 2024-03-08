@@ -494,13 +494,10 @@
             <li class="navigation__item">
               <a href="#" class="navigation__link">Shop</a>
               <ul class="default-menu list-unstyled">
-                <li class="sub-menu__item"><a href="./shop.html"
-                    class="menu-link menu-link_us-s">Eyeglasses</a></li>
-                <li class="sub-menu__item"><a href="./shop.html"
-                    class="menu-link menu-link_us-s">Sunglasses</a>
+                <li class="sub-menu__item"><a href="./shop.html" class="menu-link menu-link_us-s">Eyeglasses</a></li>
+                <li class="sub-menu__item"><a href="./shop.html" class="menu-link menu-link_us-s">Sunglasses</a>
                 </li>
-                <li class="sub-menu__item"><a href="./shop.html"
-                    class="menu-link menu-link_us-s">Lenses</a>
+                <li class="sub-menu__item"><a href="./shop.html" class="menu-link menu-link_us-s">Lenses</a>
                 </li>
                 <li class="sub-menu__item"><a href="./shop.html" class="menu-link menu-link_us-s">Contact
                     lenses</a></li>
@@ -755,6 +752,7 @@
           </div><!-- /.accordion-item -->
         </div><!-- /.accordion -->
 
+        
 
         <div class="accordion" id="size-filters">
           <div class="accordion-item mb-4 pb-3">
@@ -786,6 +784,36 @@
           </div><!-- /.accordion-item -->
         </div><!-- /.accordion -->
 
+        <div class="accordion" id="size-filters">
+          <div class="accordion-item mb-4 pb-3">
+            <h5 class="accordion-header" id="accordion-heading-size">
+              <button class="accordion-button p-0 border-0 fs-5 text-uppercase" type="button" data-bs-toggle="collapse"
+                data-bs-target="#accordion-filter-size" aria-expanded="true" aria-controls="accordion-filter-size">
+                Sorting
+                <svg class="accordion-button__icon type2" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+                  <g aria-hidden="true" stroke="none" fill-rule="evenodd">
+                    <path
+                      d="M5.35668 0.159286C5.16235 -0.053094 4.83769 -0.0530941 4.64287 0.159286L0.147611 5.05963C-0.0492049 5.27473 -0.049205 5.62357 0.147611 5.83813C0.344427 6.05323 0.664108 6.05323 0.860924 5.83813L5 1.32706L9.13858 5.83867C9.33589 6.05378 9.65507 6.05378 9.85239 5.83867C10.0492 5.62357 10.0492 5.27473 9.85239 5.06018L5.35668 0.159286Z" />
+                  </g>
+                </svg>
+              </button>
+            </h5>
+            <div class="custom-dropdown">
+              <span class="selected-option" data-value="0">Default Sorting</span>
+              <ul class="dropdown-list">
+                <li data-value="0">Default Sorting</li>
+                <li data-value="1">Featured</li>
+                <li data-value="2">Best selling</li>
+                <li data-value="3">Alphabetically, A-Z</li>
+                <li data-value="4">Alphabetically, Z-A</li>
+                <li data-value="5">Price, low to high</li>
+                <li data-value="6">Price, high to low</li>
+                <li data-value="7">Date, old to new</li>
+                <li data-value="8">Date, new to old</li>
+              </ul>
+            </div>
+          </div><!-- /.accordion-item -->
+        </div><!-- /.accordion -->
 
         <div class="accordion" id="brand-filters">
           <div class="accordion-item mb-4 pb-3">
@@ -1123,28 +1151,6 @@
         <div class="d-flex justify-content-between mb-4 pb-md-2">
           <div class="shop-acs d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
 
-            <div class="custom-dropdown">
-              <span class="selected-option" data-value="0">Default Sorting</span>
-              <ul class="dropdown-list">
-                <li data-value="0">Default Sorting</li>
-                <li data-value="1">Featured</li>
-                <li data-value="2">Best selling</li>
-                <li data-value="3">Alphabetically, A-Z</li>
-                <li data-value="4">Alphabetically, Z-A</li>
-                <li data-value="5">Price, low to high</li>
-                <li data-value="6">Price, high to low</li>
-                <li data-value="7">Date, old to new</li>
-                <li data-value="8">Date, new to old</li>
-              </ul>
-            </div>
-
-            <div class="col-size align-items-center order-1 d-none d-lg-flex">
-              <span class="text-uppercase fw-medium me-2">View</span>
-              <button class="btn-link fw-medium me-2 js-cols-size" data-target="products-grid" data-cols="2">2</button>
-              <button class="btn-link fw-medium me-2 js-cols-size" data-target="products-grid" data-cols="3">3</button>
-              <button class="btn-link fw-medium js-cols-size" data-target="products-grid"  data-cols="4">4</button>
-            </div><!-- /.col-size -->
-
             <div class="shop-filter d-flex align-items-center order-0 order-md-3 d-lg-none">
               <button class="btn btn-primary d-flex align-items-center px-3 py-2 js-open-aside" data-aside="shopFilter">
                 <svg class="d-inline-block align-middle me-2" width="14" height="10" viewBox="0 0 14 10" fill="none"
@@ -1160,7 +1166,7 @@
         </div><!-- /.d-flex justify-content-between -->
 
 
-        <div class="products-grid row row-cols-2 row-cols-md-3" id="products-grid">
+        <div class="products-grid row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" id="products-grid">
           <div class="product-card-wrapper">
             <div class="product-card mb-3 mb-md-4 mb-xxl-5">
               <div class="pc__img-wrapper">
@@ -2402,15 +2408,15 @@
       $(".custom-dropdown").on("click", ".selected-option", function () {
         $(".dropdown-list").toggle();
       });
-  
+
       $(".custom-dropdown").on("click", ".dropdown-list li", function () {
         var selectedValue = $(this).data("value");
         var selectedText = $(this).text();
-  
+
         $(".selected-option").data("value", selectedValue).text(selectedText);
         $(".dropdown-list").hide();
       });
-  
+
       // Close the dropdown when clicking outside
       $(document).on("click", function (e) {
         if (!$(e.target).closest(".custom-dropdown").length) {
@@ -2420,7 +2426,38 @@
     });
   </script>
   
+  <!-- Dropdown menu no close -->
+  <script>
+    $(document).ready(function () {
+      $(".shop-acs").hover(
+        function () {
+          $(".dropdown-list").stop().slideDown();
+        },
+        function () {
+          $(".dropdown-list").stop().slideUp();
+        }
+      );
   
+      $(".shop-acs, .dropdown-list").on("mouseenter", function () {
+        // Prevent the dropdown from closing when hovering over its content
+        $(".dropdown-list").stop().slideDown();
+      });
+  
+      $(".shop-acs, .dropdown-list").on("mouseleave", function () {
+        $(".dropdown-list").stop().slideUp();
+      });
+  
+      $(".dropdown-list li").on("click", function () {
+        var selectedValue = $(this).attr("data-value");
+        $(".selected-option").attr("data-value", selectedValue).text($(this).text());
+        $(".dropdown-list").slideUp();
+      });
+    });
+  </script>
+  
+
+  
+
 
 
 </body>

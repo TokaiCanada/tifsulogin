@@ -23597,3 +23597,14 @@ body.coming-soon-page .header {
 .custom-dropdown:hover .dropdown-list {
   display: block;
 }
+
+/* Brands */
+.text-above-image {
+  position: relative;
+  z-index: 2;
+}
+
+.brandimage {
+  position: relative;
+  z-index: 1;
+}

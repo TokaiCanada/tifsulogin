@@ -1,18 +1,12 @@
-let map;
+let map; // Declare map variable outside the function
 
 async function initMap() {
-  // The location of London
-  const position_1 = { lat: 51.498265, lng: -0.131050 };
-  // The location of Istanbul
-  const position_2 = { lat: 41.045762, lng: 28.986908 };
-  // The location of New York
-  const position_3 = { lat: 40.696274, lng: -73.815717 };
-  
-  // Request needed libraries.
+  const montrealPosition = { lat: 45.50713348388672, lng: -73.66159057617188 };
+
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
   const { Marker } = await google.maps.importLibrary("marker");
-  
+
   const styledMapType = new google.maps.StyledMapType(
     [
       {
@@ -20,7 +14,7 @@ async function initMap() {
         "elementType": "geometry.fill",
         "stylers": [
           {
-              "color": "#d3d3d3"
+            "color": "#d3d3d3"
           }
         ]
       },
@@ -28,10 +22,10 @@ async function initMap() {
         "featureType": "transit",
         "stylers": [
           {
-              "color": "#808080"
+            "color": "#808080"
           },
           {
-              "visibility": "off"
+            "visibility": "off"
           }
         ]
       },
@@ -40,10 +34,10 @@ async function initMap() {
         "elementType": "geometry.stroke",
         "stylers": [
           {
-              "visibility": "on"
+            "visibility": "on"
           },
           {
-              "color": "#b3b3b3"
+            "color": "#b3b3b3"
           }
         ]
       },
@@ -52,7 +46,7 @@ async function initMap() {
         "elementType": "geometry.fill",
         "stylers": [
           {
-              "color": "#ffffff"
+            "color": "#ffffff"
           }
         ]
       },
@@ -61,13 +55,13 @@ async function initMap() {
         "elementType": "geometry.fill",
         "stylers": [
           {
-              "visibility": "on"
+            "visibility": "on"
           },
           {
-              "color": "#ffffff"
+            "color": "#ffffff"
           },
           {
-              "weight": 1.8
+            "weight": 1.8
           }
         ]
       },
@@ -76,7 +70,7 @@ async function initMap() {
         "elementType": "geometry.stroke",
         "stylers": [
           {
-              "color": "#d7d7d7"
+            "color": "#d7d7d7"
           }
         ]
       },
@@ -85,10 +79,10 @@ async function initMap() {
         "elementType": "geometry.fill",
         "stylers": [
           {
-              "visibility": "on"
+            "visibility": "on"
           },
           {
-              "color": "#ebebeb"
+            "color": "#ebebeb"
           }
         ]
       },
@@ -97,7 +91,7 @@ async function initMap() {
         "elementType": "geometry",
         "stylers": [
           {
-              "color": "#a7a7a7"
+            "color": "#a7a7a7"
           }
         ]
       },
@@ -106,7 +100,7 @@ async function initMap() {
         "elementType": "geometry.fill",
         "stylers": [
           {
-              "color": "#ffffff"
+            "color": "#ffffff"
           }
         ]
       },
@@ -115,7 +109,7 @@ async function initMap() {
         "elementType": "geometry.fill",
         "stylers": [
           {
-              "color": "#ffffff"
+            "color": "#ffffff"
           }
         ]
       },
@@ -124,10 +118,10 @@ async function initMap() {
         "elementType": "geometry.fill",
         "stylers": [
           {
-              "visibility": "on"
+            "visibility": "on"
           },
           {
-              "color": "#efefef"
+            "color": "#efefef"
           }
         ]
       },
@@ -136,7 +130,7 @@ async function initMap() {
         "elementType": "labels.text.fill",
         "stylers": [
           {
-              "color": "#696969"
+            "color": "#696969"
           }
         ]
       },
@@ -145,10 +139,10 @@ async function initMap() {
         "elementType": "labels.text.fill",
         "stylers": [
           {
-              "visibility": "on"
+            "visibility": "on"
           },
           {
-              "color": "#737373"
+            "color": "#737373"
           }
         ]
       },
@@ -157,7 +151,7 @@ async function initMap() {
         "elementType": "labels.icon",
         "stylers": [
           {
-              "visibility": "off"
+            "visibility": "off"
           }
         ]
       },
@@ -166,7 +160,7 @@ async function initMap() {
         "elementType": "labels",
         "stylers": [
           {
-              "visibility": "off"
+            "visibility": "off"
           }
         ]
       },
@@ -175,7 +169,7 @@ async function initMap() {
         "elementType": "geometry.stroke",
         "stylers": [
           {
-              "color": "#d6d6d6"
+            "color": "#d6d6d6"
           }
         ]
       },
@@ -184,7 +178,7 @@ async function initMap() {
         "elementType": "labels.icon",
         "stylers": [
           {
-              "visibility": "off"
+            "visibility": "off"
           }
         ]
       },
@@ -194,7 +188,7 @@ async function initMap() {
         "elementType": "geometry.fill",
         "stylers": [
           {
-              "color": "#dadada"
+            "color": "#dadada"
           }
         ]
       }
@@ -202,11 +196,10 @@ async function initMap() {
     { name: "Map" },
   );
 
-  // The map, centered at Uluru
   map = new Map(document.getElementById("map"), {
-    zoom: 3,
-    center: position_1,
-    mapId: "UomoMap",
+    zoom: 14,
+    center: montrealPosition,
+    mapId: "524c2714b675479", // Change this to your map ID
     mapTypeControlOptions: {
       mapTypeIds: ["styled_map"],
     },
@@ -215,66 +208,35 @@ async function initMap() {
   map.mapTypes.set("styled_map", styledMapType);
   map.setMapTypeId("styled_map");
 
-  // The marker, positioned at London
-  const marker_1 = new Marker({
+  const marker = new Marker({
     map: map,
-    position: position_1,
+    position: montrealPosition,
     icon: "../images/map-marker.png",
-    title: "London",
-  });
-  // The marker, positioned at Istanbul
-  const marker_2 = new Marker({
-    map: map,
-    position: position_2,
-    icon: "../images/map-marker.png",
-    title: "Istanbul",
-  });
-  // The marker, positioned at New York
-  const marker_3 = new Marker({
-    map: map,
-    position: position_3,
-    icon: "../images/map-marker.png",
-    title: "New York",
+    title: "Montreal",
   });
 
   let store_info = document.querySelector(".google-map__marker-detail");
 
   let store_selector_1 = document.querySelector("#store_selector_1");
-  if(store_selector_1) {
-    store_selector_1.addEventListener("click", function(e) {
+  if (store_selector_1) {
+    store_selector_1.addEventListener("click", function (e) {
       store_info.classList.remove("hide");
-      map.setCenter(marker_1.getPosition());
+      map.setCenter(marker.getPosition());
       map.setZoom(12);
-      document.querySelector(".google-map__marker-detail__content").innerHTML = store_selector_1.closest('.store-location__search-result__item').innerHTML;
+      document.querySelector(".google-map__marker-detail__content").innerHTML =
+        store_selector_1.closest(".store-location__search-result__item").innerHTML;
     }, false);
   }
 
-  let store_selector_2 = document.querySelector("#store_selector_2");
-  if(store_selector_2) {
-    store_selector_2.addEventListener("click", function(e) {
-      store_info.classList.remove("hide");
-      map.setCenter(marker_2.getPosition());
-      map.setZoom(12);
-      document.querySelector(".google-map__marker-detail__content").innerHTML = store_selector_2.closest('.store-location__search-result__item').innerHTML;
-    }, false);
-  }
-
-  let store_selector_3 = document.querySelector("#store_selector_3");
-  if(store_selector_3) {
-    store_selector_3.addEventListener("click", function(e) {
-      store_info.classList.remove("hide");
-      map.setCenter(marker_3.getPosition());
-      map.setZoom(12);
-      document.querySelector(".google-map__marker-detail__content").innerHTML = store_selector_3.closest('.store-location__search-result__item').innerHTML;
-    }, false);
-  }
+  // Remove other store selector event listeners (store_selector_2, store_selector_3) as you only have one location now
 
   let store_info_close_btn = document.querySelector(".google-map__marker-detail .btn-close");
-  if(store_info_close_btn && store_info) {
-    store_info_close_btn.addEventListener("click", function(e) {
+  if (store_info_close_btn && store_info) {
+    store_info_close_btn.addEventListener("click", function (e) {
       store_info.classList.add("hide");
     }, false);
   }
 }
+
 
 initMap();

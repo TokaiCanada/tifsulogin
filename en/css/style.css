@@ -12221,7 +12221,7 @@ img {
 #scrollTop {
   position: fixed !important;
   right: 0;
-  bottom: 3.375rem;
+  bottom: 0rem;
   z-index: 1030;
   width: 45px;
   height: 45px;
@@ -14307,7 +14307,7 @@ fieldset:disabled .btn {
 
 .form-control:disabled,
 .form-control[readonly] {
-  background-color: #e9ecef;
+  background-color: #fff;
   opacity: 1;
 }
 
@@ -14463,11 +14463,35 @@ textarea.form-control-lg {
   width: 100%;
   padding: 0.9375rem 0.9375rem 0.75rem;
   padding-right: 2.34375rem;
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.7143;
   border: 0.125rem solid #e4e4e4;
+  box-shadow: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%232F2D51' stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.9375rem center;
+  background-size: 16px 12px;
+  color: #222222;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border-radius: 0;
+}
+
+/* test */
+.custom-select {
+  position: relative;
+  width: 100%; /* Adjust width as needed */
+  z-index: 2;
+  display: block;
+  padding: 0.9375rem 0.9375rem 0.75rem;
+  padding-right: 2.34375rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.7143;
+  border: 0.125rem solid #e4e4e4;
   box-shadow: none;
   background-color: #fff;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%232F2D51' stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
@@ -14476,14 +14500,50 @@ textarea.form-control-lg {
   background-size: 16px 12px;
   color: #222222;
   appearance: none;
-  vertical-align: middle;
+  border-radius: 0;
 }
 
-.form-select:focus {
-  border-color: #222222;
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(34, 34, 34, 0.25);
+.custom-select select {
+  display: none;
 }
+
+.custom-select .select-selected {
+  background-color: #fff;
+  /* border: 1px solid #ccc;
+  padding: 5px 10px; */
+  cursor: pointer;
+}
+
+.custom-select .select-selected:after {
+  position: absolute;
+  /* top: 50%;
+  right: 10px;
+  transform: translateY(-50%); */
+}
+
+/* .custom-select .select-items {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom: none; 
+  width: 100%;
+  max-height: 150px; 
+  overflow-y: auto;
+  top: 100%; 
+} */
+
+/* .custom-select .select-items div {
+  padding: 5px 10px;
+  cursor: pointer;
+} */
+
+/* .custom-select .select-items div:hover {
+  background-color: #f2f2f2;
+} */
+
+
+/* test */
 
 .form-select[multiple],
 .form-select[size]:not([size="1"]) {
@@ -18433,6 +18493,11 @@ textarea.form-control.is-invalid {
   max-width: 90%;
 }
 
+.tifsu_logo_footer {
+  max-width: 293px;
+  border-radius: 7px;
+}
+
 .header-tools {
   margin-right: -0.5rem;
 }
@@ -19103,7 +19168,7 @@ textarea.form-control.is-invalid {
 
 .footer_type_2 {
   background-color: #ffffff;
-  color: #767676;
+  color: #c0bfbf;
 }
 
 .footer_type_2 .form-select {
@@ -19124,7 +19189,7 @@ textarea.form-control.is-invalid {
 
 .footer_type_2.dark {
   background-color: #222222;
-  color: #ffffff;
+  color: #c0bfbf;
 }
 
 .footer_type_2.dark .sub-menu__title {
@@ -19211,6 +19276,10 @@ textarea.form-control.is-invalid {
 
   .footer-menu {
     width: 17%;
+  }
+
+  .footer-menu2 {
+    width: 1%;
   }
 
   .footer-newsletter {
@@ -23607,4 +23676,13 @@ body.coming-soon-page .header {
 .brandimage {
   position: relative;
   z-index: 1;
+}
+
+.large-heading {
+  font-size: 36px; /* Adjust the font size as needed */
+  display: inline;
+}
+
+.vision-heading {
+  display: inline;
 }

@@ -1,7 +1,6 @@
-let map; // Declare map variable outside the function
-
 async function initMap() {
-  const montrealPosition = { lat: 45.50713348388672, lng: -73.66159057617188 };
+  const lucernePosition = { lat: 45.50713348388672, lng: -73.66159057617188 };
+  const jeanTalonPosition = { lat: 45.501077, lng: -73.646349 };
 
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
@@ -197,8 +196,8 @@ async function initMap() {
   );
 
   map = new Map(document.getElementById("map"), {
-    zoom: 14,
-    center: montrealPosition,
+    zoom: 13,
+    center: lucernePosition,
     mapId: "524c2714b675479", // Change this to your map ID
     mapTypeControlOptions: {
       mapTypeIds: ["styled_map"],
@@ -208,27 +207,66 @@ async function initMap() {
   map.mapTypes.set("styled_map", styledMapType);
   map.setMapTypeId("styled_map");
 
-  const marker = new Marker({
+  
+  // Template for new location marker
+
+  // const locationMarker = new Marker({ // Change location to desired place
+  //   map: map,
+  //   position: locationPosition, // Change location to desired place
+  //   icon: "../images/map-marker.png",
+  //   title: "Location", // Change location to desired place
+  // });
+
+  const lucerneMarker = new Marker({
     map: map,
-    position: montrealPosition,
+    position: lucernePosition,
     icon: "../images/map-marker.png",
-    title: "Montreal",
+    title: "Lucerne",
+  });
+
+  const jeanTalonMarker = new Marker({
+    map: map,
+    position: jeanTalonPosition,
+    icon: "../images/map-marker.png",
+    title: "JeanTalon",
   });
 
   let store_info = document.querySelector(".google-map__marker-detail");
 
-  let store_selector_1 = document.querySelector("#store_selector_1");
-  if (store_selector_1) {
-    store_selector_1.addEventListener("click", function (e) {
+  // Template for new location store selector
+
+  // let store_selector_Location = document.querySelector("#store_selector_Location"); // Change store_selector_Location to Desired place "Twice"
+  // if (store_selector_Location) { // Change store_selector_Location to Desired place
+  //   store_selector_Location.addEventListener("click", function (e) { // Change store_selector_Location to Desired place
+  //     store_info.classList.remove("hide");
+  //     map.setCenter(locationMarker.getPosition()); // Change locationMarker to Desired place
+  //     map.setZoom(17);
+  //     document.querySelector(".google-map__marker-detail__content").innerHTML =
+  //       store_selector_Location.closest(".store-location__search-result__item").innerHTML; // Change store_selector_Location to Desired place
+  //   }, false);
+  // }
+
+  let store_selector_Lucerne = document.querySelector("#store_selector_Lucerne");
+  if (store_selector_Lucerne) {
+    store_selector_Lucerne.addEventListener("click", function (e) {
       store_info.classList.remove("hide");
-      map.setCenter(marker.getPosition());
-      map.setZoom(12);
+      map.setCenter(lucerneMarker.getPosition());
+      map.setZoom(17);
       document.querySelector(".google-map__marker-detail__content").innerHTML =
-        store_selector_1.closest(".store-location__search-result__item").innerHTML;
+        store_selector_Lucerne.closest(".store-location__search-result__item").innerHTML;
     }, false);
   }
 
-  // Remove other store selector event listeners (store_selector_2, store_selector_3) as you only have one location now
+  let store_selector_Jean_Talon = document.querySelector("#store_selector_Jean_Talon");
+  if (store_selector_Jean_Talon) {
+    store_selector_Jean_Talon.addEventListener("click", function (e) {
+      store_info.classList.remove("hide");
+      map.setCenter(jeanTalonMarker.getPosition());
+      map.setZoom(17);
+      document.querySelector(".google-map__marker-detail__content").innerHTML =
+        store_selector_Jean_Talon.closest(".store-location__search-result__item").innerHTML;
+    }, false);
+  }
 
   let store_info_close_btn = document.querySelector(".google-map__marker-detail .btn-close");
   if (store_info_close_btn && store_info) {

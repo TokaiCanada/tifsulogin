@@ -10079,8 +10079,18 @@ body {
 }
 
 .text-shadow-white {
-  text-shadow: 0 0 0.3rem #fff;
+  text-shadow: 0 0 0.1rem #ffffff;
 }
+
+.text-outline-white {
+  color: #222222; /* Fill color of the text */
+  text-shadow: 
+  -1px -1px 0 1px #afafaf,  
+  1px -1px 0 1px #afafaf,
+  -1px 1px 0 1px #afafaf,
+  1px 1px 0 1px #afafaf; /* Width and color of the outline */
+}
+
 
 @media (min-width: 768px) {
   .h-md-100 {

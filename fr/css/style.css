@@ -12268,6 +12268,12 @@ img {
   margin: 0 auto;
 }
 
+.mw-930-2 {
+  width: 40.125rem !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
 .w-740 {
   width: 46.25rem;
   max-width: 100%;
@@ -15551,6 +15557,10 @@ textarea.form-control.is-invalid {
 
 .pc__btn-wl {
   color: #767676;
+}
+
+.pc__btn-wl2 {
+  color: #76767600;
 }
 
 .js-add-wishlist.active {
@@ -23695,4 +23705,25 @@ body.coming-soon-page .header {
 
 .vision-heading {
   display: inline;
+}
+
+.section-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.section-content {
+  flex-grow: 1;
+  margin-right: 20px; /* Adjust this value as needed */
+}
+
+.image-container {
+  flex-shrink: 0;
+  width: 200px; /* Adjust the width of the image container as needed */
+}
+
+.section-image {
+  max-width: 100%;
+  height: auto;
 }

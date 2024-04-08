@@ -12404,7 +12404,7 @@ img {
   border: 1px solid #eeeeee;
   color: #222222;
   background-color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.625rem;
   font-weight: 500;
   line-height: 1.375;
   outline: none;
@@ -23695,4 +23695,35 @@ body.coming-soon-page .header {
 
 .vision-heading {
   display: inline;
+}
+
+.image-container {
+  flex-shrink: 0;
+  width: 200px; /* Adjust the width of the image container as needed */
+}
+
+.section-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.mw-930-2 {
+  width: 40.125rem !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
+.pc__btn-wl2 {
+  color: #76767600;
+}
+
+.section-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.section-content {
+  flex-grow: 1;
+  margin-right: 20px; /* Adjust this value as needed */
 }

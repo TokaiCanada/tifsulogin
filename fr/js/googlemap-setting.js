@@ -1,5 +1,5 @@
 async function initMap() {
-  const lucernePosition = { lat: 45.50713348388672, lng: -73.66159057617188 };
+  // const lucernePosition = { lat: 45.50713348388672, lng: -73.66159057617188 };
   const jeanTalonPosition = { lat: 45.501077, lng: -73.646349 };
 
   //@ts-ignore
@@ -197,7 +197,7 @@ async function initMap() {
 
   map = new Map(document.getElementById("map"), {
     zoom: 13,
-    center: lucernePosition,
+    center: jeanTalonPosition,
     mapId: "524c2714b675479", // Change this to your map ID
     mapTypeControlOptions: {
       mapTypeIds: ["styled_map"],
@@ -217,12 +217,12 @@ async function initMap() {
   //   title: "Location", // Change location to desired place
   // });
 
-  const lucerneMarker = new Marker({
-    map: map,
-    position: lucernePosition,
-    icon: "../images/map-marker.png",
-    title: "Lucerne",
-  });
+  // const lucerneMarker = new Marker({
+  //   map: map,
+  //   position: lucernePosition,
+  //   icon: "../images/map-marker.png",
+  //   title: "Lucerne",
+  // });
 
   const jeanTalonMarker = new Marker({
     map: map,
@@ -246,16 +246,16 @@ async function initMap() {
   //   }, false);
   // }
 
-  let store_selector_Lucerne = document.querySelector("#store_selector_Lucerne");
-  if (store_selector_Lucerne) {
-    store_selector_Lucerne.addEventListener("click", function (e) {
-      store_info.classList.remove("hide");
-      map.setCenter(lucerneMarker.getPosition());
-      map.setZoom(17);
-      document.querySelector(".google-map__marker-detail__content").innerHTML =
-        store_selector_Lucerne.closest(".store-location__search-result__item").innerHTML;
-    }, false);
-  }
+  // let store_selector_Lucerne = document.querySelector("#store_selector_Lucerne");
+  // if (store_selector_Lucerne) {
+  //   store_selector_Lucerne.addEventListener("click", function (e) {
+  //     store_info.classList.remove("hide");
+  //     map.setCenter(lucerneMarker.getPosition());
+  //     map.setZoom(17);
+  //     document.querySelector(".google-map__marker-detail__content").innerHTML =
+  //       store_selector_Lucerne.closest(".store-location__search-result__item").innerHTML;
+  //   }, false);
+  // }
 
   let store_selector_Jean_Talon = document.querySelector("#store_selector_Jean_Talon");
   if (store_selector_Jean_Talon) {

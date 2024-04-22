@@ -23733,3 +23733,7 @@ body.coming-soon-page .header {
   max-width: 100%;
   height: auto;
 }
+
+.error {
+  border-color: red;
+}

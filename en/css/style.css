@@ -10224,6 +10224,7 @@ h6,
   }
 }
 
+
 .section-title {
   font-size: 1.625rem;
 }
@@ -23009,10 +23010,26 @@ a.add-to-wishlist.active .flaticon.flaticon-heart {
 }
 
 .about-us .page-title {
-  font-size: 2.1875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 2.5rem;
+  font-size: 2.1875rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.page-titles {
+  font-weight: 700 !important;
+}
+
+@media (min-width: 992px) {
+  .page-titles {
+    font-size: 3.125rem !important;
+  }
+}
+
+.about-us .page-titles {
+  font-size: 2.1875rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
 }
 
 .about-us__content {
@@ -23798,4 +23815,18 @@ body.coming-soon-page .header {
   border: none;
   color: white;
   cursor: pointer;
+}
+
+.full-width-image {
+  width: 100vw;
+  /* Full viewport width */
+  position: relative;
+  /* Adjust position if necessary */
+  left: 49%;
+  /* Center the image */
+  right: 49%;
+  margin-left: -50vw;
+  /* Pull it to the left edge */
+  margin-right: -50vw;
+  /* Pull it to the right edge */
 }

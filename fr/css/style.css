@@ -13091,6 +13091,11 @@ img {
 
 .btn-55 {
   height: 3.4375rem;
+  display: flex;        /* Use flexbox to center content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center;  /* Center content vertically */
+  text-align: center;   /* Center the text inside the flex container */
+  width: 20rem;          /* Optional: ensure the button stretches to full container width */
 }
 
 .btn-50 {
@@ -19950,6 +19955,24 @@ textarea.form-control.is-invalid {
     --content-space: 4.5625rem;
   }
 }
+
+/* index */
+.grids-banner__item img {
+  max-width: 100% !important;       /* Ensure the image doesn't exceed the width of its container */
+  max-height: 100% !important;     /* Maximum height for the image */
+  object-fit: cover !important;     /* Cover the area of the container without distorting the aspect ratio */
+}
+
+
+/* Apply a specific max-height for larger screens */
+@media (max-width: 1200px) {
+  .grids-banner__item img {
+    max-width: 100% !important;       /* Ensure the image doesn't exceed the width of its container */
+    max-height: 200px !important;     /* Maximum height for the image */
+    object-fit: cover !important;     /* Cover the area of the container without distorting the aspect ratio */
+  }
+}
+/* index */
 
 .products-grid .row {
   --bs-gutter-x: 0.875rem;

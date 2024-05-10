@@ -13065,6 +13065,10 @@ img {
   padding-bottom: 0.5625rem;
 }
 
+.container2 {
+  text-align: left;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .btn2 {
     transition: none;

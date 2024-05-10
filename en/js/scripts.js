@@ -15,7 +15,7 @@ for (var i = 0; i < customSelects.length; i++) {
     var option = select.options[j];
     var item = document.createElement("div");
     item.innerHTML = option.textContent || option.innerText;
-    item.addEventListener("click", function() {
+    item.addEventListener("click", function () {
       selectSelected.innerHTML = this.innerHTML;
       select.value = this.innerHTML;
       selectItems.style.display = "none";
@@ -24,11 +24,11 @@ for (var i = 0; i < customSelects.length; i++) {
   }
   customSelects[i].appendChild(selectItems);
 
-  selectSelected.addEventListener("click", function() {
+  selectSelected.addEventListener("click", function () {
     this.nextSibling.style.display = "block";
   });
 
-  document.addEventListener("click", function(e) {
+  document.addEventListener("click", function (e) {
     if (!e.target.matches(".select-selected")) {
       var items = document.getElementsByClassName("select-items");
       for (var k = 0; k < items.length; k++) {

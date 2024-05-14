@@ -4504,6 +4504,14 @@ progress {
   margin-top: 3rem !important;
 }
 
+.mt-6 {
+  margin-top: 5rem !important;
+}
+
+.mt-10 {
+  margin-top: 10rem !important;
+}
+
 .mt-auto {
   margin-top: auto !important;
 }

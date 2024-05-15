@@ -7374,6 +7374,11 @@ progress {
     margin-left: 3rem !important;
   }
 
+  .mx-xl-brand {
+    /* margin-right: 3rem !important; */
+    margin-left: 3rem !important;
+  }
+
   .mx-xl-auto {
     margin-right: auto !important;
     margin-left: auto !important;
@@ -12259,7 +12264,7 @@ img {
 }
 
 .mw-1620 {
-  width: 1620px !important;
+  width: 100% !important;
   max-width: 100% !important;
   margin: 0 auto;
 }

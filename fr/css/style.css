@@ -13104,6 +13104,18 @@ img {
   height: 3.4375rem;
 }
 
+.align-left {
+  width: 100%; /* Make the button take up the full width of the container */
+  text-align: center; /* Center the text within the button */
+  margin-left: 0; /* Ensure there's no left margin */
+  display: block; /* Ensure the element is a block-level element */
+}
+
+.btn2 .text_dash_half {
+  flex: 1;
+}
+
+
 /* btn2 */
 
 .btn-55 {

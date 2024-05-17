@@ -1163,8 +1163,8 @@ function pureFadeOut(e) {
     }
 
     initCookieConsient() {
-      const purecookieDesc = "In order to provide you a personalized shopping experience, our site uses cookies. By continuing to use this site, you are agreeing to our cookie policy.",
-      purecookieButton = "Accept";
+      const purecookieDesc = "Afin de vous offrir une expérience d'achat personnalisée, notre site utilise des cookies. En continuant à utiliser ce site, vous acceptez notre politique en matière de cookies.",
+      purecookieButton = "Accepté";
 
       function pureFadeIn(e, o) {
         var i = document.getElementById(e);

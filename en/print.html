@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/lens-form.css" type="text/css">
+
+  <title>Tokai Lens Form</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <form id="lensForm">
+      <div class="form-section0">
+        <div class="field">
+          <label for="receiveDate">Receive Date:</label>
+          <button2 class="button2" type="button2" id="setTodayDateButton">Set Today's Date</button2>
+          <div id="receiveDateDisplay" class="formatted-date"></div>
+        </div>
+        <div class="field">
+          <label for="customerCode">Customer Code:</label>
+          <input type="text" id="customerCode" name="customerCode" placeholder="Enter customer code">
+        </div>
+        <div class="field">
+          <label for="reference">Reference:</label>
+          <input type="text" id="reference" name="reference" placeholder="Enter the reference">
+        </div>
+      </div>
+
+      <div class="form-section full-width">
+        <h3>Basic Data</h3>
+      </div>
+
+      <div class="form-section5">
+        <div class="checkbox-container">
+          <div class="field checkbox-field">
+            <input type="checkbox" id="duplicateLens" onclick="toggleDuplicate()">
+            <label for="duplicateLens" class="small-label">Duplicate</label>
+          </div>
+        </div>
+
+        <div class="fields-container">
+          <div class="field">
+            <label for="lensR">Lens R:</label>
+            <div class="dropdown">
+              <input type="text" id="lensR" name="lensR" placeholder="Enter lens R"
+                oninput="filterOptions(this.value, 'R'); syncLensValues('R');" onfocus="showAllOptions('R')"
+                autocomplete="off">
+              <div class="arrow-icon" onclick="toggleDropdown('R')">&#9662;</div>
+              <div id="lensR-options" class="dropdown-content"></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="lensL">Lens L:</label>
+            <div class="dropdown">
+              <input type="text" id="lensL" name="lensL" placeholder="Enter lens L"
+                oninput="filterOptions(this.value, 'L'); syncLensValues('L');" onfocus="showAllOptions('L')"
+                autocomplete="off">
+              <div class="arrow-icon" onclick="toggleDropdown('L')">&#9662;</div>
+              <div id="lensL-options" class="dropdown-content"></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="coat">Coat:</label>
+            <select id="coat" name="coat">
+              <option value="" disabled selected>Select coat</option>
+              <option value="PGC">PGC</option>
+              <option value="SPS">SPS</option>
+              <option value="MSC">MSC</option>
+              <option value="BCC">BCC</option>
+              <option value="USC">USC</option>
+              <option value="RMC">RMC</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="form-section2">
+        <div class="field">
+          <label for="colorGroup">Color Group:</label>
+          <select id="colorGroup" name="colorGroup">
+            <option value="" disabled selected>Select color group</option>
+            <option value="None">None</option>
+            <option value="FAOC">Fair Ocre (FAOC)</option>
+            <option value="FABR">Fair Brown (FABR)</option>
+            <option value="FAMN">Fair Marron (FAMN)</option>
+            <option value="GLOR">Glow Orange (GLOR)</option>
+            <option value="GLPL">Glow Plum (GLPL)</option>
+            <option value="GLBD">Glow Bordeaux (GLBD)</option>
+            <option value="TRPP">True Purple (TRPP)</option>
+            <option value="TRGY">True Gray (TRGY)</option>
+            <option value="TRVI">True Violet (TRVI)</option>
+            <option value="BZGN">Breeze Green (BZGN)</option>
+            <option value="BZNV">Breeze Navy (BZNV)</option>
+            <option value="BZBL">Breeze Blue (BZBL)</option>
+            <option value="COPR">Copper (COPR)</option>
+            <option value="SMOK">Smoke (SMOK)</option>
+            <option value="FORE">Forest (FORE)</option>
+            <option value="SPYL">Sparky Yellow (SPYL)</option>
+            <option value="SPPK">Sparky Pink (SPPK)</option>
+            <option value="OLIV">Olive Twin (OLIV)</option>
+            <option value="COTT">Cotton Twin (COTT)</option>
+            <option value="MINT">Mint Twin (MINT)</option>
+            <option value="ROSE">Rose Twin (ROSE)</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Deep sea">Deep sea</option>
+            <option value="Jade Blue">Jade Blue</option>
+            <option value="Moss Green">Moss Green</option>
+            <option value="Meteor Gray">Meteor Gray</option>
+            <option value="Creek">Creek</option>
+            <option value="Iron Blue">Iron Blue</option>
+            <option value="Dark Orchid">Dark Orchid</option>
+            <option value="Gunmetal Gray">Gunmetal Gray</option>
+            <option value="Sand Brown">Sand Brown</option>
+            <option value="Topazolite">Topazolite</option>
+            <option value="Fire Brick">Fire Brick</option>
+            <option value="River Blue">River Blue</option>
+            <option value="Dark Copper">Dark Copper</option>
+            <option value="FEEL BROWN">FEEL BROWN</option>
+            <option value="FEEL PURPLE">FEEL PURPLE</option>
+            <option value="FEEL GRAY">FEEL GRAY</option>
+            <option value="FEEL PINK">FEEL PINK</option>
+            <option value="OCLUA GRAY">OCLUA GRAY</option>
+            <option value="OCLUA BROWN">OCLUA BROWN</option>
+            <option value="HDAYLIGHT">DAYLIGHT (HDAYLIGHT)</option>
+            <option value="HCACAO">CACAO (HCACAO)</option>
+            <option value="HPEONY">PEONY (HPEONY)</option>
+            <option value="HDUSK">DUSK (HDUSK)</option>
+            <option value="HVIOLET">VIOLET (HVIOLET)</option>
+            <option value="Digital Filter Gray">Digital Filter Gray</option>
+            <option value="Digital Filter Rose">Digital Filter Rose</option>
+            <option value="SAMPLE">SAMPLE</option>
+            <option value="GOLF">GOLF</option>
+            <option value="PC">PC</option>
+            <option value="WALKING">WALKING</option>
+            <option value="DRIVE">DRIVE</option>
+            <option value="OUTDOOR">OUTDOOR</option>
+            <option value="TREKKING">TREKKING</option>
+            <option value="FISHING">FISHING</option>
+            <option value="TENNIS">TENNIS</option>
+            <option value="ORGY">Original Gray (ORGY)</option>
+            <option value="HUNTING">HUNTING</option>
+            <option value="SHOOTING">SHOOTING</option>
+            <option value="MOTORCYCLING">MOTORCYCLING</option>
+            <option value="BOWLING">BOWLING</option>
+            <option value="DGGY1">DGGY1</option>
+            <option value="DGBR1">DGBR1</option>
+            <option value="DGGN1">DGGN1</option>
+            <option value="DGGY2">DGGY2</option>
+            <option value="DGBR2">DGBR2</option>
+            <option value="DGGN2">DGGN2</option>
+            <option value="ORRBG">ORRBG</option>
+            <option value="HCOR">CORAL (HCOR)</option>
+            <option value="HBRT">BROWN TOPAZ (HBRT)</option>
+            <option value="HAMP">AMETHYST PURPLE (HAMP)</option>
+            <option value="HKUN">KUNZITE (HKUN)</option>
+            <option value="HMON">MORGANITE (HMON)</option>
+            <option value="HIDL">INDIGOLITE (HIDL)</option>
+            <option value="HTAN">TANZANITE (HTAN)</option>
+            <option value="HBNBR">NOBLE BROWN (HBNBR)</option>
+            <option value="HBCMV">CLEAR MAUVE (HBCMV)</option>
+            <option value="HBSGY">SHEER GRAY (HBSGY)</option>
+            <option value="ACVGOLF">ACVGOLF</option>
+            <option value="ACVWALK">ACVWALK</option>
+            <option value="ACVDRIVE">ACVDRIVE</option>
+            <option value="SKGY">ACVDRIVE</option>
+            <option value="SDGY">Shadow Gray</option>
+            <option value="GCBL">Grace Blue</option>
+            <option value="CLBL">Clear Blue</option>
+            <option value="SLGY">Slate Gray</option>
+            <option value="BTBR">Bistre Brown</option>
+            <option value="GGY">GGY Gray Double</option>
+            <option value="GBR">GBR Brown Double</option>
+            <option value="GGN">GGN Green Double</option>
+            <option value="Fine Purple">Fine Purple</option>
+            <option value="Fine Pink">Fine Pink</option>
+            <option value="Fine Green">Fine Green</option>
+            <option value="Fine Brown">Fine Brown</option>
+            <option value="Fine Gray">Fine Gray</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="nameTypeDensity">Name/Type/Density(%):</label>
+          <select id="nameTypeDensity" name="nameTypeDensity">
+            <option value="" disabled selected>Chose a color group</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="instructions">Instructions:</label>
+          <textarea id="instructions" name="instructions" placeholder="Enter your instructions" rows="2"
+            cols="50"></textarea>
+        </div>
+
+      </div>
+
+      <div class="form-section full-width">
+        <h3>R and L Data</h3>
+      </div>
+
+      <table class="r-l-data-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>SPH</br>*</th>
+            <th>CYL</br>*</th>
+            <th>Axis</br>*</th>
+            <th>ADD</br>*</th>
+            <th class="prog-only">Corridor</br>(prog *)</th>
+            <th class="prog-only">Design Pattern</br>(prog *)</th>
+            <th>PD</br>*</th>
+            <th>HEIGHT</br>SV: ok Ø</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R:</td>
+            <td><input type="text" id="sphR" name="sphR"></td>
+            <td><input type="text" id="cylR" name="cylR"></td>
+            <td><input type="text" id="axisR" name="axisR"></td>
+            <td><input type="text" id="addR" name="addR"></td>
+            <td class="prog-only"><input type="text" id="corridorR" name="corridorR" value="15"></td>
+            <td class="prog-only"><input type="text" id="designPatternR" name="designPatternR" value="MT"></td>
+            <td><input type="text" id="pdR" name="pdR"></td>
+            <td><input type="text" id="heightR" name="heightR"></td>
+          </tr>
+          <tr>
+            <td>L:</td>
+            <td><input type="text" id="sphL" name="sphL"></td>
+            <td><input type="text" id="cylL" name="cylL"></td>
+            <td><input type="text" id="axisL" name="axisL"></td>
+            <td><input type="text" id="addL" name="addL"></td>
+            <td class="prog-only"><input type="text" id="corridorL" name="corridorL" value="15"></td>
+            <td class="prog-only"><input type="text" id="designPatternL" name="designPatternL" value="MT"></td>
+            <td><input type="text" id="pdL" name="pdL"></td>
+            <td><input type="text" id="heightL" name="heightL"></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="form-section full-width">
+        <h3>Lens Shape Data</h3>
+      </div>
+
+      <!-- <table class="r-l-data-tables">
+        <thead>
+          <tr>
+            <th></th>
+            <th>PD</th>
+            <th>HEIGHT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R:</td>
+            <td><input type="text" id="pdR" name="pdR" style="width: 40px;"></td>
+            <td><input type="text" id="heightR" name="heightR" style="width: 80px;"></td>
+          </tr>
+          <tr>
+            <td>L:</td>
+            <td><input type="text" id="pdL" name="pdL" style="width: 40px;"></td>
+            <td><input type="text" id="heightL" name="heightL" style="width: 80px;"></td>
+          </tr>
+        </tbody>
+      </table> -->
+
+      <div class="form-section0">
+
+        <div class="field" id="frameMaterialField">
+          <label for="frameMaterial">Frame Material:</label>
+          <select id="frameMaterial" name="frameMaterial" onchange="handleFrameMaterialChange()">
+            <option value="" disabled selected>Select frame material</option>
+            <option value="Plastic">Plastic</option>
+            <option value="Metal">Metal</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="frameShape">Frame Shape:</label>
+          <select id="frameShape" name="frameShape">
+            <option value="" disabled selected>Select frame shape</option>
+            <option value="Rectangle: Rectangular">Rectangle: Rectangular</option>
+            <option value="Rectangle: Trapezium">Rectangle: Trapezium</option>
+            <option value="Rectangle: Curved Edges">Rectangle: Curved Edges</option>
+            <option value="Aviator: Rectangular">Aviator: Rectangular</option>
+            <option value="Aviator: Flat Top">Aviator: Flat Top</option>
+            <option value="Aviator: Stretched">Aviator: Stretched</option>
+            <option value="Aviator: Teardrop">Aviator: Teardrop</option>
+            <option value="Round: Classic">Round: Classic</option>
+            <option value="Round: Teardrop">Round: Teardrop</option>
+            <option value="Round: Rectangular">Round: Rectangular</option>
+            <option value="Oval: Classic">Oval: Classic</option>
+            <option value="Oval: Stretched">Oval: Stretched</option>
+            <option value="Squared Temporal Corners">Squared Temporal Corners</option>
+            <option value="Cat">Cat</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="edgeType">Edge Type:</label>
+          <select id="edgeType" name="edgeType">
+            <option value="" disabled selected>Select edge type</option>
+            <option value="Bevel">Bevel</option>
+            <option value="Nylor">Nylor</option>
+            <option value="Drill">Drill</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="field">
+          <label for="b">B (vertical):</label>
+          <input type="text" id="b" name="b" placeholder="Enter B (vertical)">
+        </div>
+        <div class="field">
+          <label for="a">A (horizontal):</label>
+          <input type="text" id="a" name="a" placeholder="Enter A (horizontal)">
+        </div>
+        <div class="field">
+          <label for="bridge">Bridge:</label>
+          <input type="text" id="bridge" name="bridge" placeholder="Enter Bridge">
+        </div>
+        <div class="field">
+          <label for="fpd">FPD:</label>
+          <input type="text" id="fpd" name="fpd" placeholder="Enter FPD">
+        </div>
+      </div>
+
+
+      <div class="row">
+
+        <div class="field form-sections">
+          <label style="font-size:x-large;" for="reference2">Reference:</label>
+          <input style="font-size:xx-large;" type="text" id="reference2" name="reference2"
+            placeholder="Enter the reference">
+        </div>
+
+        <button type="button" onclick="printForm()">Print</button>
+
+      </div>
+
+    </form>
+  </div>
+
+  <script src="./js/customerCode-reference.js"></script>
+
+  <script src="./js/print.js"></script>
+
+  <script src="./js/material-type.js"></script>
+
+  <script src="./js/color-code-filter.js"></script>
+
+  <script src="./js/date-today.js"></script>
+
+  <script src="./js/SPH.js"></script>
+
+  <script src="./js/CYL.js"></script>
+
+  <script src="./js/ADD.js"></script>
+
+  <script src="./js/Axis.js"></script>
+
+  <script src="./js/only-numbers.js"></script>
+
+  <script src="./js/lens-filter.js"></script>
+
+</body>
+
+</html>

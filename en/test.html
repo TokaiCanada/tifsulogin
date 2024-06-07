@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/plugins/swiper.min.css" type="text/css">
   <link rel="stylesheet" href="css/plugins/jquery.fancybox.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="style.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -785,147 +786,71 @@
 
         <div class="tab-pane fade" id="tab-item-register" role="tabpanel" aria-labelledby="register-tab">
           <div class="register-form">
-            <form name="register-form" class="needs-validation" novalidate>
 
-              <div class="pb-3"></div>
+            <h1>REGISTRATION FORM</h1>
+
+            <form name="RegForm" onsubmit="return validateForm()">
 
               <div class="row2">
 
                 <div class="col-md-6">
                   <div class="form-floating mb-3">
-                    <input name="register_first_name" type="text" class="form-control form-control_gray"
-                      id="customerFirstNameInput" placeholder="First Name *" required>
-                    <label for="customerFirstNameInput">First Name *</label>
-                    <p id="firstNameError" class="error-message" style="display: none;">
-                    </p>
+                    <input type="text" id="name" name="Name" class="form-control form-control_gray"
+                      placeholder="Enter your full name" />
+                    <label for="name">First Name *</label>
+                    <span id="name-error" class="error-message"></span>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating mb-3">
-                    <input name="register_last_name" type="text" class="form-control form-control_gray"
-                      id="customerLastNameInput" placeholder="Last Name *" required>
-                    <label for="customerLastNameInput">Last Name *</label>
-                    <p id="lastNameError" class="error-message" style="display: none;">
-                    </p>
+                    <input type="text" id="lastName" name="Last Name" class="form-control form-control_gray"
+                      placeholder="Enter your last name" />
+                    <label for="lastName">Last Name *</label>
+                    <span id="lastName-error" class="error-message"></span>
                   </div>
                 </div>
 
-                <div class="row2">
+              </div>
 
-                  <div class="col-md-7">
-                    <div class="form-floating mb-3">
-                      <input name="register_email" type="email" class="form-control form-control_gray"
-                        id="customerEmailRegisterInput" placeholder="Email address *" required>
-                      <label for="customerEmailRegisterInput">Email address *</label>
-                      <p id="emailError" class="error-message" style="display: none;">
-                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Please enter a valid email address.
-                      </p>
-                    </div>
+              <div class="row2">
+
+                <div class="col-md-7">
+                  <div class="form-floating mb-3">
+
+                    <input type="text" id="email" name="EMail" class="form-control form-control_gray"
+                      placeholder="Enter your email" />
+                    <label for="email">E-mail Address:</label>
+                    <span id="email-error" class="error-message"></span>
+
                   </div>
+                </div>
 
-                  <div class="col-md-5">
-                    <div class="form-floating mb-3">
-                      <input class="datepicker form-control" type="text" class="form-control form-control_gray"
-                        id="customerDateInput" placeholder="Birthdate *" required>
-                      <label for="customerDateInput">
-                        Birthdate <small style="font-size: 10px;">(dd/mm/yyyy)</small>*
-                      </label>
-                      <p id="birthdateError" class="error-message" style="display: none;">
-                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Please enter a valid birthdate.
-                      </p>
-                    </div>
+                <!-- <div class="col-md-5">
+                  <div class="form-floating mb-3">
+
+                    <input class="datepicker form-control" type="text" class="form-control form-control_gray"
+                      id="customerDateInput" placeholder="Birthdate *" required>
+                    <label for="customerDateInput">
+                      Birthdate <small style="font-size: 10px;">(dd/mm/yyyy)</small>*
+                    </label>
+                    <span id="email-error" class="error-message"></span>
+
                   </div>
+                </div> -->
 
-                </div>
+              </div>
 
-                <div class="form-floating mb-3 position-relative">
-                  <input name="register_password" type="password" class="form-control form-control_gray"
-                    id="customerPasswordRegisterInput" placeholder="Password *" required>
-                  <label for="customerPasswordRegisterInput">Password *</label>
-                  <i class="fa fa-eye-slash position-absolute" id="togglePassword"
-                    style="cursor: pointer; right: 25px; top: 50%; transform: translateY(-50%);"></i>
-                </div>
+              <div class="form-floating mb-3">
 
-                <!-- <div class="form-floating mb-3 position-relative">
-                <input name="repeat_register_password" type="password" class="form-control form-control_gray"
-                  id="customerRepeatPasswordRegisterInput" placeholder="Repeat Password *" required>
-                <label for="customerRepeatPasswordRegisterInput">Repeat Password *</label>
-                <i class="fa fa-eye-slash position-absolute" id="togglePassword2"
-                  style="cursor: pointer; right: 25px; top: 50%; transform: translateY(-50%);"></i>
-              </div> -->
+                <input type="password" id="password" name="Password" class="form-control form-control_gray"
+                  placeholder="Enter your email" />
+                <label for="password">Password:</label>
+                <span id="password-error" class="error-message"></span>
 
-                <!-- <p id="passwordMismatch" class="error-message" style="display: none;">
-                <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Passwords do not match!
-              </p> -->
-                <p id="passwordSpecial" class="error-message" style="display: none;">
-                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Passwords require a special character
-                </p>
-                <p id="passwordCapital" class="error-message" style="display: none;">
-                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Passwords require a capital letter
-                </p>
-                <p id="passwordLength" class="error-message" style="display: none;">
-                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Passwords must be at least 8 characters
-                  long
-                </p>
+              </div>
 
-                <div class="d-flex align-items-center my-3">
-                  <hr class="flex-grow-1 separator-line">
-                  <span class="mx-2 separator-text">Or</span>
-                  <hr class="flex-grow-1 separator-line">
-                </div>
-
-                <div class="align-middle pb-3">
-                  <button class="gsi-material-button" style="width:500">
-                    <div class="gsi-material-button-state"></div>
-                    <div class="gsi-material-button-content-wrapper">
-                      <div class="gsi-material-button-icon">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
-                          xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block;">
-                          <path fill="#EA4335"
-                            d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z">
-                          </path>
-                          <path fill="#4285F4"
-                            d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z">
-                          </path>
-                          <path fill="#FBBC05"
-                            d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z">
-                          </path>
-                          <path fill="#34A853"
-                            d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z">
-                          </path>
-                          <path fill="none" d="M0 0h48v48H0z"></path>
-                        </svg>
-                      </div>
-                      <span class="gsi-material-button-contents">Sign in with Google</span>
-                      <span style="display: none;">Sign in with Google</span>
-                    </div>
-                  </button>
-                </div>
-
-                <div class="align-middle pb-3">
-                  <button class="gsi-material-button" style="width:500">
-                    <div class="gsi-material-button-state"></div>
-                    <div class="gsi-material-button-content-wrapper">
-                      <div class="gsi-material-button-icon">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="5 5 40 40"
-                          xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block;">
-                          <path xmlns="http://www.w3.org/2000/svg" fill="#039be5"
-                            d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z" />
-                          <path xmlns="http://www.w3.org/2000/svg" fill="#fff"
-                            d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z" />
-                          <path fill="none" d="M0 0h48v48H0z"></path>
-                        </svg>
-                      </div>
-                      <span class="gsi-material-button-contents">Sign in with Facebook</span>
-                      <span style="display: none;">Sign in with Facebook</span>
-                    </div>
-                  </button>
-                </div>
-
-                <div class="pb-3"></div>
-
-                <button class="btn btn-primary w-100 text-uppercase" type="submit">Register</button>
+              <input class="btn btn-primary w-100 text-uppercase" type="submit" value="REGISTER" name="Submit" />
 
             </form>
 
@@ -933,7 +858,11 @@
         </div>
 
       </div>
+
     </section>
+
+
+    <script src="script.js"></script>
   </main>
 
   <script>
@@ -1139,3 +1068,78 @@
 </body>
 
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>REGISTRATION FORM</h1>
+  <form name="RegForm" onsubmit="return validateForm()">
+    <p>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="Name" placeholder="Enter your full name" />
+      <span id="name-error" class="error-message"></span>
+    </p>
+    <p>
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="Address" placeholder="Enter your address" />
+      <span id="address-error" class="error-message"></span>
+    </p>
+    <p>
+      <label for="email">E-mail Address:</label>
+      <input type="text" id="email" name="EMail" placeholder="Enter your email" />
+      <span id="email-error" class="error-message"></span>
+    </p>
+    <p>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="Password" />
+      <span id="password-error" class="error-message"></span>
+    </p>
+    <p>
+      <label for="subject">Select Your Course:</label>
+      <select id="subject" name="Subject">
+        <option value="">
+          Select Course
+        </option>
+        <option value="BTECH">
+          BTECH
+        </option>
+        <option value="BBA">
+          BBA
+        </option>
+        <option value="BCA">
+          BCA
+        </option>
+        <option value="B.COM">
+          B.COM
+        </option>
+      </select>
+      <span id="subject-error" class="error-message"></span>
+    </p>
+    <p>
+      <label for="comment">College Name:</label>
+      <textarea id="comment" name="Comment"></textarea>
+    </p>
+    <p>
+      <input type="checkbox" id="agree" name="Agree" />
+      <label for="agree">I agree to the above
+        information</label>
+      <span id="agree-error" class="error-message"></span>
+    </p>
+    <p>
+      <input type="submit" value="Send" name="Submit" />
+      <input type="reset" value="Reset" name="Reset" />
+    </p>
+  </form>
+  <script src="script.js"></script>
+</body>
+
+</html> -->

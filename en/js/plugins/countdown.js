@@ -1,5 +1,5 @@
 
-const countdown = function(_config) {
+const countdown = function (_config) {
   const tarDate = _config.target.dataset.date.split('-');
   const day = parseInt(tarDate[0]);
   const month = parseInt(tarDate[1]);
@@ -19,7 +19,7 @@ const countdown = function(_config) {
   }
 
   // Set the date we're counting down to
-  const countDownDate = new Date(year, month-1, day, tarhour, tarmin, 0, 0).getTime();
+  const countDownDate = new Date(year, month - 1, day, tarhour, tarmin, 0, 0).getTime();
 
   const updateTime = () => {
     // Get todays date and time
@@ -50,4 +50,4 @@ const countdown = function(_config) {
   updateTime();
 }
 
-const addZero = (x) => (x < 10 && x >= 0) ? "0"+x : x;
+const addZero = (x) => (x < 10 && x >= 0) ? "0" + x : x;

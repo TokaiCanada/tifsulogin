@@ -70,19 +70,22 @@ input[type="checkbox"]:hover {
 
 .error-message {
   color: red;
-  font-size: 14px;
-  margin-top: 5px;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
 }
 
 .error-icon {
   display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: red;
-  color: white;
-  text-align: center;
-  line-height: 15px;
+  vertical-align: 2px;
+  /* Adjust the vertical alignment */
   margin-right: 5px;
-  font-weight: bold;
+}
+
+.toggle-password-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px; /* Adjust based on padding-right of input */
+  top: 50%;
+  transform: translateY(-50%);
 }

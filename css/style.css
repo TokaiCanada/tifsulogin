@@ -14429,6 +14429,7 @@ fieldset:disabled .btn {
 
 .form-control_gray {
   border-color: #e4e4e4;
+  /* padding-right: 2.5rem; */
 }
 
 .form-control-plaintext {
@@ -14950,6 +14951,10 @@ textarea.form-control-lg {
 
 .form-floating {
   position: relative;
+}
+
+.form-floating input {
+  padding-right: 2.5rem; /* Make room for the icon */
 }
 
 .form-floating>.form-control,

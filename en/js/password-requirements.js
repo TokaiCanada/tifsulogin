@@ -13,41 +13,41 @@ document.addEventListener('DOMContentLoaded', function () {
       togglePasswordVisibility(passwordInput, togglePassword);
     });
   
-    window.validatePassword = function () {
-      const password = passwordInput.value;
-      let isValid = true;
+    // window.validatePassword = function () {
+    //   const password = passwordInput.value;
+    //   let isValid = true;
   
-      if (!/[^a-zA-Z0-9]/.test(password)) {
-        passwordSpecialMessage.style.display = 'flex';
-        isValid = false;
-      } else {
-        passwordSpecialMessage.style.display = 'none';
-      }
+    //   if (!/[^a-zA-Z0-9]/.test(password)) {
+    //     passwordSpecialMessage.style.display = 'flex';
+    //     isValid = false;
+    //   } else {
+    //     passwordSpecialMessage.style.display = 'none';
+    //   }
   
-      if (!/[A-Z]/.test(password)) {
-        passwordCapitalMessage.style.display = 'flex';
-        isValid = false;
-      } else {
-        passwordCapitalMessage.style.display = 'none';
-      }
+    //   if (!/[A-Z]/.test(password)) {
+    //     passwordCapitalMessage.style.display = 'flex';
+    //     isValid = false;
+    //   } else {
+    //     passwordCapitalMessage.style.display = 'none';
+    //   }
   
-      if (password.length < 8) {
-        passwordLengthMessage.style.display = 'flex';
-        isValid = false;
-      } else {
-        passwordLengthMessage.style.display = 'none';
-      }
+    //   if (password.length < 8) {
+    //     passwordLengthMessage.style.display = 'flex';
+    //     isValid = false;
+    //   } else {
+    //     passwordLengthMessage.style.display = 'none';
+    //   }
   
-      if (isValid) {
-        passwordInput.classList.remove('is-invalid');
-        passwordInput.classList.add('is-valid');
-      } else {
-        passwordInput.classList.remove('is-valid');
-        passwordInput.classList.add('is-invalid');
-      }
+    //   if (isValid) {
+    //     passwordInput.classList.remove('is-invalid');
+    //     passwordInput.classList.add('is-valid');
+    //   } else {
+    //     passwordInput.classList.remove('is-valid');
+    //     passwordInput.classList.add('is-invalid');
+    //   }
   
-      return isValid;
-    };
+    //   return isValid;
+    // };
   
     function togglePasswordVisibility(input, toggleIcon) {
       const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
